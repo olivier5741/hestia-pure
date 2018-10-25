@@ -1,21 +1,21 @@
 # theme.toml template for a Hugo theme
 # See https://github.com/spf13/hugoThemes#themetoml for an example
 
-name = "Hestia Pure"
+name = "Rokiwi Pure"
 license = "MIT"
-licenselink = "https://github.com/diwao/hestia-pure/blob/master/LICENSE.md"
+licenselink = "https://github.com/olivier5741/rokiwi-pure/blob/master/LICENSE.md"
 description = ""
-homepage = "http://diwao.com/hestia-pure/"
+homepage = "http://olivier5741.github.io/australia/"
 tags = ["", ""]
 features = ["", ""]
 min_version = 0.18
 
 [author]
-  name = "diwao"
-  homepage = "http://diwao.com/"
+  name = "olivier5741"
+  homepage = "http://olivier5741.github.io/resume/"
 
 # If porting an existing theme
 [original]
-  name = ""
-  homepage = ""
-  repo = ""
+  name = "Hestia Pure"
+  homepage = "http://diwao.com/hestia-pure/"
+  repo = "https://github.com/diwao/hestia-pure"
