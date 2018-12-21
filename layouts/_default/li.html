@@ -1,4 +1,4 @@
-<article class="card pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+<article class="card pure-u-5 pure-u-md-1-5 pure-u-lg-1-5">
   <a class="card__thumb" href="{{ .Permalink }}">
     <img src='{{ if and (.Params.image) (ne .Params.image "") }}{{ .Params.image }}{{ else }}{{ "image/theme/og.png" | absURL }}{{ end }}' alt="">
   </a>
@@ -9,5 +9,14 @@
     <time datetime="{{ .Date.Format " 2006-01-02T15:04:05Z07:00" | safeHTML }}">{{ .Date.Format "2006.01.02" }}</time>
   </span>
   <a style="float:right;" href="{{ .Params.album }}">Link to album</a><!-- TODO align this right -->
-  <p >{{ if .IsPage }}{{ if gt (len .Summary) 200 }}{{slicestr .Summary 0 200}}{{ else }} {{ .Summary }} {{ end }}...{{ else }}{{ .Site.Params.description }}{{ end }}</p>
+  <p >{{ if .IsPage }}
+
+        {{ .Summary }}
+
+        {{ if .Truncated }}
+          <a href="{{ .RelPermalink }}">…</a>
+        {{ end }}
+      {{ else }} 
+        {{ .Site.Params.description }} 
+      {{ end }}</p>
 </article>
