@@ -3,24 +3,27 @@
 {{ partial "head" . }}
 <body>
   <div id="wrap" class="wrap">
+    <div style="position: absolute;">
+        {{ range $.Site.Home.AllTranslations }}
+        <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+        {{ end }}
+    </div>
     {{ partial "header" . }}
     <main class="main">
       <section class="articles">
-        <div class="pure-g">
           {{ range .Pages.GroupBy "Section" }}
-          <h3>{{ .Key }}</h3>
-          <ul>
-              {{ range .Pages.GroupByPublishDate "2006-01" }}
-              <h3>{{ .Key }}</h3>
-              <ul>
-                  {{ range .Pages }}
-                    {{ .Render "li" }}
-                  {{ end }}
-              </ul>
-              {{ end }}
-          </ul>
-          {{ end }}
-        </div>
+          <h1 id="{{ .Key }}">{{ T .Key }}</h1>
+              {{ range .Pages.GroupByPublishDate "Jan 2006" }}
+              <div>
+                <h2>{{ .Key }}</h2>
+                <div class="pure-g">
+                    {{ range .Pages }}
+                      {{ .Render "li" }}
+                    {{ end }}
+                </div>
+              </div>
+              {{ end }}          
+          {{ end }}        
       </section>
     </main>
     {{ partial "footer" . }}

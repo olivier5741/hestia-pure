@@ -1,19 +1,26 @@
 <header class="header">
-  {{ $isHomePage := eq .Title .Site.Title }}{{ if eq $isHomePage true }}
+  {{ $isHomePage := eq .Title .Site.Title }}
+  {{ if eq $isHomePage true }}
   <h1>
     <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
   </h1>
-  <div style="float: right;">
-      {{ range $.Site.Home.AllTranslations }}
-      <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
-      {{ end }}
+  {{ end }}
+
+  {{ if eq $isHomePage false }}
+  <div class="site-title">
+    <a href="{{ .Site.BaseURL }}">{{ replace .Site.Title "..." (T .Section) }}</a>
   </div>
   {{ end }}
-  {{ if eq $isHomePage false }}<div class="site-title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></div>{{ end }}
+
   <p class="site-desc">{{ .Site.Params.description }}</p>
   {{ if .Site.Params.googlecustomsearch }}
   <div class="search">
     <gcse:searchbox-only></gcse:searchbox-only>
   </div>
   {{ end }}
+  <div>
+    {{ range .Pages.GroupBy "Section" }} 
+      <a class="pure-button" href="#{{ .Key }}">{{ T .Key }}</a>
+    {{ end }}
+  </div>
 </header>

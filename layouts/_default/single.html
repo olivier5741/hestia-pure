@@ -24,7 +24,7 @@
           {{ if .NextInSection }}
           <li class="pure-u-1 pure-u-md-1-2 post-nav-prev">
             <a href="{{.NextInSection.Permalink}}">
-              <span class="post-nav-label">New article</span>
+              <span class="post-nav-label">{{ T "navigation-to-new" }}</span>
               <span class="post-nav-title">
                 {{ .NextInSection.Title }}
               </span>
@@ -37,7 +37,7 @@
           {{ if .PrevInSection }}
           <li class="pure-u-1 pure-u-md-1-2 post-nav-next">
             <a href="{{.PrevInSection.Permalink}}">
-              <span class="post-nav-label">Old articles</span>
+              <span class="post-nav-label">{{ T "navigation-to-old" }}</span>
               <span class="post-nav-title">
                 {{ .PrevInSection.Title }}
               </span>
@@ -49,7 +49,7 @@
           {{ end }}
         </ol>
         <div class="post-nav-back">
-          <a class="pure-button" href="{{ .Site.BaseURL }}">Back to article list</a>
+          <a class="pure-button" href="{{ .Site.BaseURL }}">{{ T "navigation-to-list" }}</a>
         </div>
       </nav>
     <!-- /post-nav -->
