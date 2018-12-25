@@ -111,13 +111,16 @@ a {
   .card__thumb {
     display: block;
     overflow: hidden;
-    padding-top: 52.65%;
+    padding-top: 66.65%;
     position: relative; }
     .card__thumb:hover img {
       -webkit-transform: translate(-50%, -50%) scale(1.2);
               transform: translate(-50%, -50%) scale(1.2); }
     .card__thumb img {
       max-width: 100%;
+      left: 50%;
+      top: 50%;
+      position: absolute;
       -webkit-transform: translate(-50%, -50%);
               transform: translate(-50%, -50%);
       -webkit-transition: .3s all;
