@@ -117,10 +117,7 @@ a {
       -webkit-transform: translate(-50%, -50%) scale(1.2);
               transform: translate(-50%, -50%) scale(1.2); }
     .card__thumb img {
-      left: 50%;
       max-width: 100%;
-      position: absolute;
-      top: 50%;
       -webkit-transform: translate(-50%, -50%);
               transform: translate(-50%, -50%);
       -webkit-transition: .3s all;
