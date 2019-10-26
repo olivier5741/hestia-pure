@@ -14,18 +14,10 @@
         </p>
         <div class="post-content">
           {{ $reAltIn := "<p><img src=\"([^\"]+)\" alt=\"([^\"]+)\" /></p>" }}
-          {{ $reAltOut := "<figure><img src=\"$1\" alt=\"$2\"><figcaption>$3</figcaption></figure>" }}
+          {{ $reAltOut := "<figure><img src=\"$1\" alt=\"$2\"><figcaption>$2</figcaption></figure>" }}
           {{ $altContent := .Content | replaceRE $reAltIn $reAltOut | safeHTML }}
-
-          {{ $reTitleIn := "<p><img src=\"([^\"]+)\" alt=\"\" title=\"([^\"]+)\" /></p>" }}
-          {{ $reTitleOut := "<figure><img src=\"$1\" title=\"$2\"><figcaption>$2</figcaption></figure>" }}
-          {{ $titleContent := $altContent | replaceRE $reTitleIn $reTitleOut | safeHTML }}
         
-          {{ $reAltTitleIn := "<p><img src=\"([^\"]+)\" alt=\"([^\"]+)\" title=\"([^\"]+)\" /></p>" }}
-          {{ $reAltTitleOut := "<figure><img src=\"$1\" alt=\"$2\" title=\"$3\"><figcaption>$3</figcaption></figure>" }}
-          {{ $finalContent := $titleContent | replaceRE $reAltTitleIn $reAltTitleOut | safeHTML }}
-        
-          {{ $finalContent }}
+          {{ $altContent }}
         </div>
       </article>
       <!-- /post -->
