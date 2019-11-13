@@ -16,23 +16,13 @@
   //   width: 100%;
   // }
 
-  &__title,
-  &__date{
-    max-width: 760px;    
-    margin: auto;
-  }
-
   &__title {
-    font-size: 1.6em;  
+    font-size: 1.6em;
   }
 
   &__date {
     color: #c2c6cc;
     text-align: right;
-  }
-
-  .grid {
-    margin: 1em auto;    
   }
 }
 
@@ -42,31 +32,13 @@
   img {
     border: 1px solid #eee;
     display: block;
-    margin: auto;
+    margin: 2em auto 3em;
     max-width: 100%;
-  }
-
-  figure {
-
-    margin: 2em 0em;
-
-    figcaption:not(.grid-item){      
-      max-width: 600px;
-    }
-
-    figcaption {
-      margin: auto;
-      padding: 0.5em 0px;
-      font-style: italic;
-      font-size: 15px;
-    }
   }
 
   p {
     line-height: 2;
-    max-width: 760px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 1.5em;
     // word-wrap: break-word;
   }
 
@@ -111,13 +83,6 @@
       font-size: .8em;
     }
   }
-}
-
-.post-nav,
-.post-hr {
-  max-width: 760px;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 .post-hr {

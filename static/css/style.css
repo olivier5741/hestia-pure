@@ -2,7 +2,8 @@
 *,
 *::after,
 *::before {
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
 
 body {
   font-family: "Sawarabi Gothic", Meiryo, "メイリオ", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN", "YuGothic", "游ゴシック", Helvetica, Arial, sans-serif; }
@@ -15,19 +16,29 @@ a {
     opacity: .6;
     text-decoration: none; }
 
+figure {
+  margin: 2em 0em; }
+
+figcaption {
+  font-style: italic;
+  font-size: 15px;
+}
+
 .wrap {
   overflow: hidden; }
 
 .main {
   margin: 0 auto;
-  max-width: 1200px; }
+  max-width: 1080px; }
+  .main.main--single {
+    max-width: 760px; }
 
 .header {
   margin-bottom: 3em;
   padding-top: 1em;
   text-align: center; }
   .header a {
-    color: black;
+    color: #000000;
     text-decoration: none; }
 
 .site-title {
@@ -40,7 +51,8 @@ a {
   margin: 0 auto;
   width: 300px; }
   .search * {
-    box-sizing: content-box; }
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box; }
 
 .footer {
   background-color: slategray;
@@ -52,6 +64,7 @@ a {
 
 .author {
   -webkit-box-align: center;
+      -ms-flex-align: center;
           align-items: center;
   margin: 0 auto;
   max-width: 760px;
@@ -69,6 +82,7 @@ a {
 
 .author__links {
   display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   list-style: none;
   padding: 0; }
@@ -105,16 +119,16 @@ a {
   .card__thumb {
     display: block;
     overflow: hidden;
-    padding-top: 52.65%;
+    padding-top: 66.65%;
     position: relative; }
     .card__thumb:hover img {
       -webkit-transform: translate(-50%, -50%) scale(1.2);
               transform: translate(-50%, -50%) scale(1.2); }
     .card__thumb img {
-      left: 50%;
       max-width: 100%;
-      position: absolute;
+      left: 50%;
       top: 50%;
+      position: absolute;
       -webkit-transform: translate(-50%, -50%);
               transform: translate(-50%, -50%);
       -webkit-transition: .3s all;
@@ -139,44 +153,27 @@ a {
 
 .post {
   color: #444; }
-  .post__title, .post__date {
-    max-width: 760px;
-    margin: auto; }
   .post__title {
     font-size: 1.6em; }
   .post__date {
     color: #c2c6cc;
     text-align: right; }
-  .post .grid {
-    margin: 1em auto; }
 
 .post-content {
   margin-bottom: 3em; }
   .post-content img {
     border: 1px solid #eee;
     display: block;
-    margin: auto;
     max-width: 100%; }
-  .post-content figure {
-    margin: 2em 0em; }
-    .post-content figure figcaption:not(.grid-item) {
-      max-width: 600px; }
-    .post-content figure figcaption {
-      margin: auto;
-      padding: 0.5em 0px;
-      font-style: italic;
-      font-size: 15px; }
   .post-content p {
     line-height: 2;
-    max-width: 760px;
-    margin-left: auto;
-    margin-right: auto; }
+    margin-bottom: 1.5em; }
   .post-content h2,
   .post-content h3,
   .post-content h4 {
     margin-top: 3em; }
   .post-content h2 {
-    border-left: 5px solid black;
+    border-left: 5px solid #000000;
     padding-left: .5em; }
   .post-content li {
     line-height: 1.6; }
@@ -198,12 +195,6 @@ a {
     padding: 30px; }
     .post-content blockquote a {
       font-size: .8em; }
-
-.post-nav,
-.post-hr {
-  max-width: 760px;
-  margin-right: auto;
-  margin-left: auto; }
 
 .post-hr {
   border-top: 1px solid #eee;

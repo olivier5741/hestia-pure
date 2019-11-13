@@ -25,7 +25,11 @@ a {
 
 .main {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1080px;
+
+  &.main--single {
+    max-width: 760px;
+  }
 }
 
 @import './modules/header';
