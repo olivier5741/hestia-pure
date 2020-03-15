@@ -13,8 +13,8 @@
           <a style="float:left;" href="{{ .Params.album }}">Album photo</a><!-- do better than float left hack -->
         </p>
         <div class="post-content">
-          {{ $reAltIn := "<p><img src=\"([^\"]+)\" alt=\"([^\"]+)\" /></p>" }}
-          {{ $reAltOut := "<figure><img src=\"$1=w800\" alt=\"$2\"><figcaption>$2</figcaption></figure>" }}
+          {{ $reAltIn := `<p><img src="([^"]+)" alt="([^"]+)"></p>` }}
+          {{ $reAltOut := `<figure><img src=$1=w800 alt="$2"><figcaption>$2</figcaption></figure>` }}
           {{ $altContent := .Content | replaceRE $reAltIn $reAltOut | safeHTML }}
         
           {{ $altContent }}
