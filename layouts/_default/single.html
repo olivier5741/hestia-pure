@@ -7,11 +7,20 @@
     <main class="main main--single">
       <!-- post -->
       <article class="post"　itemscope itemtype="http://schema.org/BlogPosting">
-        <h1 class="post__title">{{ .Title }}</h1>
-        <p class="post__date">
+
+<div style="display: flex;flex-wrap:wrap;align-items: center;justify-content:space-between;">
+    <div >
+      <h1 class="post__title">{{ .Title }}</h1>
+    </div>
+    <div>
+    <a style="font-size: 85%" class="pure-button" href="{{ .Params.album }}"><i class="far fa-images fa-lg"></i> Album photo</a>
+    </div>
+    <div >
+      <p class="post__date">
           <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">{{ .Date.Format "2006.01.02" }}</time>
-          <a style="float:left;" href="{{ .Params.album }}">Album photo</a><!-- do better than float left hack -->
         </p>
+    </div>
+</div>
         <div class="post-content">
           {{ $reAltIn := `<p><img src="([^"]+)" alt="([^"]+)"></p>` }}
           {{ $reAltOut := `<figure><img src=$1=w800 alt="$2"><figcaption>$2</figcaption></figure>` }}
@@ -30,7 +39,7 @@
             <a href="{{.NextInSection.Permalink}}">
               <span class="post-nav-label">{{ T "navigation-to-new" }}</span>
               <span class="post-nav-title">
-                {{ .NextInSection.Title }}
+'                {{ .NextInSection.Title }}
               </span>
             </a>
           </li>
