@@ -6,7 +6,7 @@
   <a style="flex: 0 0 100%" href="{{ .Permalink }}">
     <h3>{{ .Title }}</h3>
   </a>
-  <a  style="font-size: 85%" class="pure-button" href="{{ .Params.album }}"><i class="far fa-images fa-lg"></i> Album photo</a>
+  <a  style="font-size: 85%" class="pure-button" href="{{ .Params.album }}"><i class="far fa-images fa-lg"></i>&nbsp;Album photo</a>
   <div>
     <time datetime="{{ .Date.Format " 2006-01-02T15:04:05Z07:00" | safeHTML }}">{{ .Date.Format "2006.01.02" }}</time>
   </div>
