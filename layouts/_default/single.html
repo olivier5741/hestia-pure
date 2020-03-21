@@ -8,18 +8,12 @@
       <!-- post -->
       <article class="post"　itemscope itemtype="http://schema.org/BlogPosting">
 
-<div style="display: flex;flex-wrap:wrap;align-items: center;justify-content:space-between;">
-    <div >
-      <h1 class="post__title">{{ .Title }}</h1>
-    </div>
-    <div>
-    <a style="font-size: 85%" class="pure-button" href="{{ .Params.album }}"><i class="far fa-images fa-lg"></i> Album photo</a>
-    </div>
-    <div >
-      <p class="post__date">
+<div style="display: flex;flex-wrap:wrap;align-items: center;">
+  <h1 style="flex-grow:2;" class="post__title">{{ .Title }}</h1>
+  <a style="font-size: 85%;margin-right:10px" class="pure-button" href="{{ .Params.album }}"><i class="far fa-images fa-lg"></i> Album photo</a>
+  <p style="margin-left: auto;" class="post__date">
           <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">{{ .Date.Format "2006.01.02" }}</time>
         </p>
-    </div>
 </div>
         <div class="post-content">
           {{ $reAltIn := `<p><img src="([^"]+)" alt="([^"]+)"></p>` }}

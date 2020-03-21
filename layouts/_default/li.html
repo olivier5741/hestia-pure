@@ -2,13 +2,15 @@
   <a class="card__thumb" href="{{ .Permalink }}">
     <img src='{{ if and (.Params.image) (ne .Params.image "") }}{{ .Params.image }}{{ else }}{{ "image/theme/og.png" | absURL }}{{ end }}' alt="">
   </a>
-  <a href="{{ .Permalink }}">
+  <div style="display: flex;flex-wrap:wrap;align-items: center;justify-content:space-between;">
+  <a style="flex: 0 0 100%" href="{{ .Permalink }}">
     <h3>{{ .Title }}</h3>
   </a>
-  <span>
+  <a  style="font-size: 85%" class="pure-button" href="{{ .Params.album }}"><i class="far fa-images fa-lg"></i> Album photo</a>
+  <div>
     <time datetime="{{ .Date.Format " 2006-01-02T15:04:05Z07:00" | safeHTML }}">{{ .Date.Format "2006.01.02" }}</time>
-  </span>
-  <a  href="{{ .Params.album }}">Album photo</a><!-- TODO align this right -->
+  </div>
+  </div>
   <p >{{ if .IsPage }}
 
         {{ .Summary }}
